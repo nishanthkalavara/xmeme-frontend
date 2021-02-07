@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="styles.css">
+    <script src="myscripts.js"></script>
+    
+    <div class="flex-head">
+    <h1>X Meme</h1>
+    <button class="openbtn"  onclick="openNav()" > Create Xmeme</button>
+     
+    </div>
+
+    <div ></div>Take a break and Enjoy the memes !!</div> 
+    <hr>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="download (1).jpg">
+          <img src="download (1).jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="img-capt">Add a description of the image here</div>
+        <div class="img-name"> Nishanth</div>
+      </div>
+    </div>
+    
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="download (2).jpg">
+          <img src="download (2).jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="img-capt">Add a description of the image here</div>
+        <div class="img-name"> Nishanth</div>      </div>
+    </div>
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="download (3).jpg">
+          <img src="download (3).jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="img-capt">Add a description of the image here</div>
+        <div class="img-name"> Nishanth</div>      </div>
+    </div>
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="download (4).jpg">
+          <img src="download (4).jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="img-capt">Add a description of the image here</div>
+        <div class="img-name"> Nishanth</div>      </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    
+
+
+
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="container">
+            <form action="action_page.php">
+              <hr>
+              <h3>Let's create a meme !!</h3>
+              <hr>
+              <div class="row">
+                <div class="col-25">
+                  <label for="f-name">Meme Owner</label><span class="required">*</span>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="f-name" name="fullname" placeholder="Enter your full name" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="f-caption">Caption</label><span class="required">*</span>
+                </div>
+                <div class="col-75">
+                  <textarea id="f-caption" name="caption" placeholder="Be creative with the caption" style="height:150px" required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="f-url">Meme URL</label><span class="required">*</span>
+                </div>
+                <div class="col-75">
+                  <input type="url" id="f-url" name="img url" placeholder="Enter URL of your meme here" required>
+                </div>
+              </div>
+              <div class="row">
+              <input type="submit" value="Submit">
+              <input type="reset" value="Reset">
+              
+              </div>
+            </form>
+          </div>
+      </div>
+      
+      
+</body>
+</html>
+
+
