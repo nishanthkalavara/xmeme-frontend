@@ -1,13 +1,13 @@
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidebar").style.width = "50%";
-    document.getElementById("main").style.marginRight = "50%";
+    //document.getElementById("main").style.marginRight = "50%";
   }
   
   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
+    //document.getElementById("main").style.marginRight = "0";
   }
 
 
@@ -17,7 +17,7 @@ function openNav() {
 function refreshHandler() {
 
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+  xhr.open('GET', 'http://100.25.47.63:8081/memes', true);
   
   xhr.onload = function () {
       if(this.status === 200){
@@ -37,11 +37,11 @@ function refreshHandler() {
 
               inputs+=`<div class="responsive"> 
                 <div class="gallery">
-                  <a target="_blank" href="download (1).jpg">
-                    <img src= "${obj[key].id}" onerror="this.onerror=null;this.src='download.png';">
-                  </a>
-                  <div class="img-capt">${obj[key].id}</div>
-                  <div class="img-name"> ${obj[key].id}</div>
+                  <a target="_blank" href="${obj[key].url}">
+                    <img src= "${obj[key].url}" onerror="this.onerror=null;this.src='oops1.jpg';">
+                  <a>
+                  <div class="img-capt">${obj[key].caption}</div>
+                  <div class="img-name"> ${obj[key].name}</div>
                 </div>
               </div>`;
                
@@ -68,24 +68,24 @@ function submitHandler(that) {
     const xhr = new XMLHttpRequest();
     console.log("helo");
 
-    xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+    xhr.open('POST', 'http://100.25.47.63:8081/memes', true);
     xhr.getResponseHeader('Content-type', 'application/json');
 
 
     xhr.onload = function () {
         if(this.status === 200){
-            //refreshHandler();
+            refreshHandler();
             console.log(this.responseText);
+            console.log("no error")
         }
         else{
             console.log("Some error occured");
         }
     }
-    console.log(that.fullname.value)
-    // send the request
-    params = `{"name":that.fullname.value,"salary":that.caption.value,"age":that.imgurl.value}`;
+    console.log(that.imgurl.value)
+    body = JSON.stringify({"name":that.fullname.value,"url":that.imgurl.value,"caption":that.caption.value});
    
-    xhr.send(params);
+    xhr.send(body);
 
 
 }
